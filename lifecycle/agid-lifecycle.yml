@@ -1,0 +1,18 @@
+name: AgID lifecycle
+generated: '2026-10-09'
+method: derived
+source:
+- https://github.com/AgID/protocollo-comunicazione-aoo
+- https://github.com/AgID/protocollo-comunicazione-aoo/blob/master/readme.md
+versioning: 'Normative, by AgID act: the repo keeps prior schemas (previous_schemas/segnatura_protocollo_circolare 28_2001.dtd from Circolare AIPA n. 28 of 7 May 2001; segnatura_protocollo_circolare 60_2013.xsd from Circolare AgID n. 60 of 23 January 2013); current content aligned with Determinazione AgID n. 371/2021.'
+deprecation: null
+status_page: null
+sla: null
+deprecated_operations: []
+history:
+- version: Circolare AIPA 28/2001
+  date: '2001-05-07'
+- version: Circolare AgID 60/2013
+  date: '2013-01-23'
+- version: Determinazione AgID 371/2021
+  date: null

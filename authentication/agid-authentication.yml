@@ -1,0 +1,5 @@
+name: AgID authentication
+generated: '2026-10-09'
+method: none
+note: 'The Protocollo Comunicazione AOO WSDLs declare no WS-Security / WS-Policy and no transport security; each public administration self-hosts the interface. Message integrity is handled at document level (readme.md: the sender "DEVE assicurare l autenticità, integrità e il non ripudio della segnatura informatica" via AgID electronic-signature rules), not by an API credential. No auth docs page found.'
+schemes: []

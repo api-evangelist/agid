@@ -1,0 +1,25 @@
+name: AgID MCP Server
+type: MCPServer
+provider: agid
+generated: '2026-10-09'
+method: none
+status: none
+description: >-
+  No official MCP server published by AgID (Agenzia per l'Italia Digitale) was found. AgID publishes no
+  OpenAPI contract in this repo (only two SOAP WSDLs for the Protocollo Comunicazione AOO interface),
+  so no candidate tool list was derived. Third-party MCP servers in directories (e.g. one wrapping
+  the Italian api-oas-checker Spectral ruleset, one for schema.gov.it) do not name AgID as author and
+  are not recorded as official.
+deployment:
+  mode: none
+  auth: unknown
+  verified: searched
+evidence:
+  - url: https://api.gov.it/mcp
+    status: 403
+    note: CloudFront 403 "The request could not be satisfied" for GET and for an MCP initialize POST; the same 403 is returned for api.gov.it/llms.txt and /.well-known/mcp.json (control), so it proves nothing about an MCP server.
+  - url: https://www.agid.gov.it/.well-known/mcp.json
+    status: 403
+  - search: AgID "MCP server" Agenzia per l'Italia Digitale
+    result: no official AgID MCP server found
+tools: []

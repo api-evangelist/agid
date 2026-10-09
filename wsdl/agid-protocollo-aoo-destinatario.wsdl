@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:tns="http://ws.protocollo.comunicazione.aoo.destinatario/" 
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:soapbind="http://schemas.xmlsoap.org/soap/http" 
+  name="ProtocolloDestinatarioService" 
+  targetNamespace="http://ws.protocollo.comunicazione.aoo.destinatario/">
+ 
+  <wsdl:types>
+
+    <xs:schema 
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:msgprot="http://www.agid.gov.it/protocollo/messaggi/"
+      xmlns:prot="http://www.agid.gov.it/protocollo/"
+      xmlns:tns="http://ws.protocollo.comunicazione.aoo.destinatario/" 
+      targetNamespace="http://ws.protocollo.comunicazione.aoo.destinatario/" 
+      elementFormDefault="qualified" version="1.0">
+
+      <xs:import namespace="http://www.agid.gov.it/protocollo/messaggi/" schemaLocation="../messaggio_protocollo.xsd"/>
+      <xs:import namespace="http://www.agid.gov.it/protocollo/" schemaLocation="../segnatura_protocollo.xsd"/>
+
+
+      <xs:element name="RequestMessageInoltro" type="tns:RequestMessaggioInoltroType"/>
+      <xs:element name="ResponseMessageInoltro" type="tns:ResponseMessaggioInoltroType"/>
+
+      <xs:element name="RequestAnnullamentoInoltroMittente" type="tns:RequestAnnullamentoInoltroMittenteType"/>
+      <xs:element name="ResponseAnnullamentoInoltroMittente" type="tns:ResponseAnnullamentoInoltroMittenteType"/>
+      
+   
+
+      <xs:complexType name="RequestMessaggioInoltroType">
+        <xs:complexContent>
+          <xs:extension base="msgprot:MessaggioProtocolloType"></xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+
+      <xs:complexType name="ResponseMessaggioInoltroType">
+        <xs:sequence>
+          <xs:element name="IdentificatoreMittente" type="prot:IdentificatoreType"/>
+          <xs:element minOccurs="0" name="Anomalia" type="tns:AnomalieInoltroType" />       
+        </xs:sequence>
+      </xs:complexType>
+
+      <xs:complexType name="RequestAnnullamentoInoltroMittenteType">
+        <xs:sequence>
+          <xs:element name="IdentificatoreMittente" type="prot:IdentificatoreType"/>
+          <xs:element name="IdentificatoreDestinatario" type="prot:IdentificatoreType"/>
+          <xs:element name="RiferimentoProvvedimento" type="xs:string"/>
+          <xs:element name="Note" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+
+      <xs:complexType name="ResponseAnnullamentoInoltroMittenteType">
+        <xs:sequence>
+          <xs:element name="IdentificatoreMittente" type="prot:IdentificatoreType"/>
+          <xs:element name="IdentificatoreDestinatario" type="prot:IdentificatoreType"/>
+          <xs:element minOccurs="0" name="Anomalia" type="tns:AnomalieAnnullamentoType" /> 
+        </xs:sequence>
+      </xs:complexType>
+      
+      
+      <xs:complexType name="AnomalieInoltroType">
+        <xs:simpleContent>
+          <xs:extension base="tns:AnomalieInoltroEnum">
+            <xs:attribute name="info" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      
+      <xs:simpleType name="AnomalieInoltroEnum">
+        <xs:restriction base="xs:string">          
+          <xs:enumeration value="001_ValidazioneFirma"/>
+          <xs:enumeration value="002_AnomaliaImpronte"/> 
+        </xs:restriction>
+      </xs:simpleType>
+      
+      <xs:complexType name="AnomalieAnnullamentoType">
+        <xs:simpleContent>
+          <xs:extension base="tns:AnomalieAnnullamentoEnum">
+            <xs:attribute name="info" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      
+      <xs:simpleType name="AnomalieAnnullamentoEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="000_Irricevibilita"/>
+          <xs:enumeration value="007_ErroreIdentificatoreNonTrovato"/>
+        </xs:restriction>
+      </xs:simpleType>
+      
+      
+    </xs:schema>
+  </wsdl:types>
+
+  
+  <wsdl:message name="RequestMessageInoltro">
+    <wsdl:part element="tns:RequestMessageInoltro" name="parameters"> </wsdl:part>
+  </wsdl:message>
+  
+  <wsdl:message name="ResponseMessageInoltro">
+    <wsdl:part element="tns:ResponseMessageInoltro" name="parameters"> </wsdl:part>
+  </wsdl:message>
+ 
+  <wsdl:message name="RequestAnnullamentoInoltroMittente">
+    <wsdl:part element="tns:RequestAnnullamentoInoltroMittente" name="parameters"> </wsdl:part>
+  </wsdl:message>
+ 
+  <wsdl:message name="ResponseAnnullamentoInoltroMittente">
+    <wsdl:part element="tns:ResponseAnnullamentoInoltroMittente" name="parameters"> </wsdl:part>
+  </wsdl:message>
+  
+  
+
+  <wsdl:portType name="ProtocolloDestinatarioPortType">
+    <wsdl:operation name="MessaggioInoltro">
+      <wsdl:input message="tns:RequestMessageInoltro" name="RequestMessageInoltro"> </wsdl:input>
+      <wsdl:output message="tns:ResponseMessageInoltro" name="ResponseMessageInoltro"> </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnnullamentoInoltroMittente">
+      <wsdl:input message="tns:RequestAnnullamentoInoltroMittente" name="RequestAnnullamentoInoltroMittente"> </wsdl:input>
+      <wsdl:output message="tns:ResponseAnnullamentoInoltroMittente" name="ResponseAnnullamentoInoltroMittente"> </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="ProtocolloDestinatarioServiceBinding" type="tns:ProtocolloDestinatarioPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="MessaggioInoltro">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="RequestMessageInoltro">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ResponseMessageInoltro">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnnullamentoInoltroMittente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="RequestAnnullamentoInoltroMittente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ResponseAnnullamentoInoltroMittente">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProtocolloDestinatarioService">
+    <wsdl:port binding="tns:ProtocolloDestinatarioServiceBinding" name="ProtocolloDestinatarioService">
+      <soap:address location="http://localhost:8080/proto-test/protocollo/destinatario"/>
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>

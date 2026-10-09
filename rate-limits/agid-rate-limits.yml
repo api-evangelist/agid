@@ -1,0 +1,6 @@
+name: AgID rate limits
+generated: '2026-10-09'
+method: none
+limit_count: 0
+note: No rate limits are published; the interface has no central deployment (each AOO self-hosts it).
+limits: []

@@ -1,0 +1,32 @@
+name: AgID Protocollo Comunicazione AOO conventions
+generated: '2026-10-09'
+method: derived
+source:
+- wsdl/agid-protocollo-aoo-mittente.wsdl
+- wsdl/agid-protocollo-aoo-destinatario.wsdl
+- https://github.com/AgID/protocollo-comunicazione-aoo/blob/master/readme.md
+protocol: SOAP 1.1 document/literal over HTTP, soapAction ""
+auth: none declared in the WSDL (see authentication/agid-authentication.yml)
+hosting: implemented and self-hosted by each AOO; WSDLs carry only a localhost test address
+error_envelope: in-band <Anomalia> enumeration element in each Response (see errors/agid-error-codes.yml); no wsdl:fault declared
+correlation: 'IdentificatoreMittente / IdentificatoreDestinatario (prot:IdentificatoreType) echoed in requests and responses'
+integrity: 'segnatura informatica carries digests (impronte) of the primary document and attachments and must be signed (readme.md)'
+pagination: na
+idempotency:
+  coverage: none
+  note: No idempotency key or replay-protection mechanism is declared in the WSDLs.
+rate_limit_signaling: none documented
+versioning: schema revisions published as files (previous_schemas/ 2001 DTD, 2013 XSD) and fixed by AgID determinations; no API version element
+reversibility:
+  coverage: documented
+  surfaces:
+  - write: MessaggioInoltro (sender delivers protocolled message to recipient)
+    reversal: AnnullamentoInoltroMittente
+    reversal_input: IdentificatoreMittente, IdentificatoreDestinatario, RiferimentoProvvedimento, Note (optional)
+    window: null
+    grade: documented
+  - write: ConfermaMessaggioInoltro (recipient confirms registration back to sender)
+    reversal: AnnullamentoInoltroDestinatario
+    window: null
+    grade: documented
+  note: Cancellation operations exist in the WSDLs and require a reference to the cancelling administrative act (RiferimentoProvvedimento); no time window is stated in anything read.

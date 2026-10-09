@@ -1,0 +1,55 @@
+generated: '2026-10-09'
+method: searched
+source: https://www.agid.gov.it/it/privacy-policy
+language: it
+signals:
+  data_subject_request:
+    url: https://www.agid.gov.it/it/privacy-policy
+    section: Diritti degli utenti
+    channel: responsabileprotezionedati@agid.gov.it
+    rights_named: [access, rectification, erasure, restriction, objection, portability]
+    escalation: Garante per la protezione dei dati personali (https://www.garanteprivacy.it)
+    evidence:
+    - source: https://www.agid.gov.it/it/privacy-policy
+      http_status: 200
+      fetched: '2026-10-09'
+      quote: "Gli interessati hanno il diritto di ottenere da AgID l’accesso ai propri dati personali, la rettifica o la cancellazione degli stessi, la limitazione del relativo trattamento, il diritto di opporvisi e il diritto alla portabilità dei dati, laddove ne ricorrano i presupposti. Le richieste vanno rivolte ad AGID, contattando il responsabile della protezione dei dati."
+    - source: https://www.agid.gov.it/it/privacy-policy
+      http_status: 200
+      fetched: '2026-10-09'
+      quote: "Fatto salvo ogni altro ricorso amministrativo o giurisdizionale, è diritto degli interessati proporre reclamo al Garante per la protezione dei dati personali qualora ritengano che il trattamento dei propri dati violi il Regolamento."
+    note: >-
+      GDPR data-subject rights (access, rectification, erasure, restriction, objection, portability) are
+      named, requests go to AgID's DPO, and a complaint to the Italian Garante is the escalation route. No
+      response time is stated. The same section says there is no automated decision-making with legal effects.
+  data_residency:
+    url: https://www.agid.gov.it/it/privacy-policy
+    section: Categorie di destinatari dei dati personali
+    evidence:
+    - source: https://www.agid.gov.it/it/privacy-policy
+      http_status: 200
+      fetched: '2026-10-09'
+      quote: "L’Agenzia tratta autonomamente i dati personali mediante il proprio personale e i fornitori di servizi tecnici e telematici. Non è contemplato alcun trasferimento in Paesi terzi o organizzazioni internazionali."
+    note: >-
+      Says personal data from the website is not transferred to third countries or international
+      organisations. That means it stays in the EU/EEA, but no specific region or hosting location is named.
+      The suppliers of technical services are mentioned but not listed, so this is NOT a subprocessor list.
+  data_retention:
+    url: https://www.agid.gov.it/it/privacy-policy
+    section: Periodo di conservazione dei dati
+    evidence:
+    - source: https://www.agid.gov.it/it/privacy-policy
+      http_status: 200
+      fetched: '2026-10-09'
+      quote: "I log di navigazione sono mantenuti per un periodo massimo di un anno. I dati personali acquisiti mediante gli indirizzi di contatto sono trattati per il tempo necessario al riscontro richiesto e successivamente cancellati."
+    note: >-
+      Navigation logs are kept for at most one year. Contact data is kept only as long as needed to answer
+      the request and is then deleted. This covers the agid.gov.it portal's privacy notice, not AgID's
+      platform APIs.
+notes: >-
+  The pages read were the portal privacy notice (it/privacy-policy, 200) and the legal notes (it/note-legali,
+  200). The legal notes contain disclaimers and social-media rules but no regulatory signals. The footer's
+  accessibility declaration (https://form.agid.gov.it/view/dd312a90-9883-11f0-a951-2d4e53f45dca) answered
+  200 but returned only a "Recupero delle informazioni in corso" loading shell, even when rendered, so
+  accessibility_conformance has no quote and is not recorded. https://www.agid.gov.it/dichiarazione-accessibilita
+  returned 404.

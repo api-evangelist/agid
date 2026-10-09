@@ -1,0 +1,57 @@
+name: AgID Protocollo Comunicazione AOO anomaly codes
+generated: '2026-10-09'
+method: derived
+source:
+- wsdl/agid-protocollo-aoo-mittente.wsdl
+- wsdl/agid-protocollo-aoo-destinatario.wsdl
+format: soap-response-element
+envelope: 'Anomalies are returned in-band as an optional <Anomalia> element (xs:string enumeration with an optional "info" attribute) inside the operation Response; no wsdl:fault is declared.'
+note: Codes and the operations they belong to are read from the WSDL enumerations; the WSDLs carry no descriptions, so meanings below are literal readings of the Italian code names, not provider prose. No HTTP status mapping is published.
+problems:
+- status: 200
+  code: 001_ValidazioneFirma
+  title: Signature validation anomaly
+  type: AnomalieInoltroEnum
+  operation: MessaggioInoltro
+  description: Returned by the recipient AOO on MessaggioInoltro.
+- status: 200
+  code: 002_AnomaliaImpronte
+  title: Digest (impronte) anomaly
+  type: AnomalieInoltroEnum
+  operation: MessaggioInoltro
+- status: 200
+  code: 000_Irricevibile
+  title: Not receivable
+  type: AnomalieConfermaEnum
+  operation: ConfermaMessaggioInoltro
+- status: 200
+  code: 003_DocumentoAllegatiNonLeggibili
+  title: Document/attachments not readable
+  type: AnomalieConfermaEnum
+  operation: ConfermaMessaggioInoltro
+- status: 200
+  code: 004_DocumentoAllegatiErroreValidazioneFirma
+  title: Document/attachments signature validation error
+  type: AnomalieConfermaEnum
+  operation: ConfermaMessaggioInoltro
+- status: 200
+  code: 005_DocumentoAllegatiErroreVaidazioneMarcaTemporale
+  title: Document/attachments timestamp validation error
+  type: AnomalieConfermaEnum
+  operation: ConfermaMessaggioInoltro
+  description: Spelling ("Vaidazione") is verbatim from the WSDL.
+- status: 200
+  code: 006_DocumentoAllegatiErroreValidazioneSigillo
+  title: Document/attachments electronic seal validation error
+  type: AnomalieConfermaEnum
+  operation: ConfermaMessaggioInoltro
+- status: 200
+  code: 000_Irricevibilita
+  title: Not receivable (cancellation)
+  type: AnomalieAnnullamentoEnum
+  operation: [AnnullamentoInoltroMittente, AnnullamentoInoltroDestinatario]
+- status: 200
+  code: 007_ErroreIdentificatoreNonTrovato
+  title: Identifier not found
+  type: AnomalieAnnullamentoEnum
+  operation: [AnnullamentoInoltroMittente, AnnullamentoInoltroDestinatario]

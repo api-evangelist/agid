@@ -1,0 +1,24 @@
+name: AgID conformance
+generated: '2026-10-09'
+method: derived
+source:
+- wsdl/agid-protocollo-aoo-mittente.wsdl
+- wsdl/agid-protocollo-aoo-destinatario.wsdl
+- https://github.com/AgID/protocollo-comunicazione-aoo/blob/master/readme.md
+standards:
+- id: wsdl-1.1
+  conforms: true
+  evidence: 'xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" in both WSDLs'
+- id: soap-1.1
+  conforms: true
+  evidence: 'soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" (namespace http://schemas.xmlsoap.org/wsdl/soap/)'
+- id: xml-schema
+  conforms: true
+  evidence: 'xmlns:xs="http://www.w3.org/2001/XMLSchema"; messages typed by inline XSD and http://www.agid.gov.it/protocollo/ schemas'
+- id: xmldsig
+  conforms: true
+  evidence: 'repo ships import_schemas/xmldsig-core-schema.xsd, imported by the segnatura schema'
+- id: agid-segnatura-protocollo
+  kind: domain-standard
+  conforms: true
+  evidence: 'readme.md: "La segnatura informatica DEVE essere formata nel rispetto del root element SegnaturaInformatica riportato in segnatura_protocollo.xsd" — Allegato 6 of the Linee Guida sulla formazione, gestione e conservazione dei documenti informatici (Determinazione AgID n. 371/2021); WSDL namespace http://www.agid.gov.it/protocollo/'

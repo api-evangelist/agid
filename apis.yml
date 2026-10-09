@@ -1,23 +1,138 @@
 aid: agid
+
 name: AgID (Agenzia per l'Italia Digitale)
-description: 'AgID (Agenzia per l''Italia Digitale) is a company surfaced via the API Evangelist harvest
-  backlog (source: spectral-ruleset-web) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'AgID (Agenzia per l''Italia Digitale) is the Italian government agency for digital innovation
+  in the public administration, describing itself as "innovazione al servizio della PA e dei cittadini.
+  Regolamentazione e certificazioni digitali." It publishes national technical guidelines (Linee Guida),
+  oversees accessibility, open data and open-source reuse, and maintains public repositories under the
+  AgID GitHub organization. It surfaced via the API Evangelist harvest backlog through a Spectral ruleset
+  for Italian OpenAPI guidelines (the Italian OpenAPI Checker).'
+
 url: https://raw.githubusercontent.com/api-evangelist/agid/refs/heads/main/apis.yml
+
+image: https://www.agid.gov.it/sites/agid/files/2024-04/logo-agid.svg
+
 x-type: company
+
 x-source: harvest:spectral-ruleset-web
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-09 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-09'
+
 modified: '2026-10-09'
+
 tags:
 - Company
-apis: []
+- Government
+- Public Sector
+- Italy
+- Digital Transformation
+- Guidelines
+- Spectral
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/agid-dati-semantic-schema-editor-spectral-rules.yml
+- type: Conventions
+  url: conventions/agid-conventions.yml
+- type: Lifecycle
+  url: lifecycle/agid-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/agid-error-codes.yml
+- type: Conformance
+  url: conformance/agid-conformance.yml
+- type: SecurityTxt
+  url: well-known/agid-security.txt
+- type: WellKnown
+  url: well-known/agid-well-known.yml
+- type: Hosts
+  url: hosts/agid-hosts.yml
+- type: Vendors
+  url: vendors/agid-vendors.yml
+- type: Security
+  url: https://www.agid.gov.it/en/intervention-areas/security
+- type: Newsroom
+  url: https://www.agid.gov.it/en/news/pdnd-guidelines-update
+- type: VulnerabilityDisclosure
+  url: security/agid-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/agid-domain-security.yml
 - type: Website
+  url: https://www.agid.gov.it/it
+- type: Guidelines
+  url: https://www.agid.gov.it/it/linee-guida
+- type: Blog
+  url: https://www.agid.gov.it/it/stampa-e-comunicazione
+- type: GitHubOrganization
+  url: https://github.com/AgID
+- type: PrivacyPolicy
+  url: https://www.agid.gov.it/it/privacy-policy
+- type: TermsOfService
+  url: https://www.agid.gov.it/it/note-legali
+- type: Twitter
+  url: https://x.com/AgidGov
+- type: LinkedIn
+  url: https://www.linkedin.com/company/agenzia-italia-digitale
+- type: YouTube
+  url: https://www.youtube.com/channel/UCxJmOWf__YcLgB19gy5dGQQ
+- type: Tools
   url: https://italia.github.io/api-oas-checker/
+- type: SpectralRules
+  url: https://github.com/teamdigitale/dati-semantic-schema-editor/blob/80bf9d6cfd2dc9b146401e990972a2a0d1943198/.spectral/rulesets/.openapirc.yml
+
+apis:
+- aid: agid:protocollo-comunicazione-aoo
+  name: AgID Protocollo Comunicazione AOO (SOAP interface)
+  description: SOAP interface definitions published by AgID for the exchange of protocolled electronic
+    administrative documents between Areas of Homogeneous Organization (AOO mittente / AOO destinataria),
+    part of AgID's guidelines on the electronic administrative document (art. 71 CAD). The interface
+    is a national standard implemented and self-hosted by each public administration; the WSDLs carry
+    only a localhost test address, so no central base URL exists.
+  humanURL: https://github.com/AgID/protocollo-comunicazione-aoo
+  tags:
+  - SOAP
+  - Interoperability
+  - Protocollo Informatico
+  properties:
+  - type: WSDL
+    name: Protocollo AOO Mittente (sender) WSDL
+    url: wsdl/agid-protocollo-aoo-mittente.wsdl
+  - type: WSDL
+    name: Protocollo AOO Destinatario (recipient) WSDL
+    url: wsdl/agid-protocollo-aoo-destinatario.wsdl
+  - type: WSDL
+    name: WSDL (provider-hosted)
+    url: https://raw.githubusercontent.com/AgID/protocollo-comunicazione-aoo/master/interfaces_SOAP/protocollo-mittente.wsdl
+  - type: GitHubRepository
+    url: https://github.com/AgID/protocollo-comunicazione-aoo
+
+x-enrichment:
+  date: '2026-10-09'
+  status: enriched
+  artifacts_added: 18
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: 'Enriched 2026-10-09: website and identity verified (verified) from the provider''s own pages; probed URLs below.'
+  evidence:
+  - url: https://www.agid.gov.it/
+    status: 200
+  - url: https://github.com/AgID
+    status: 200
+  - url: https://www.agid.gov.it/it/linee-guida
+    status: 200
+  - url: https://italia.github.io/api-oas-checker/
+    status: 200

@@ -1,0 +1,155 @@
+generated: '2026-10-09'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 13
+  own: 7
+  other_domain: 1
+  platform: 5
+  roles:
+  - api
+  - other
+  - source
+  - website
+hosts:
+- host: accessibilita.agid.gov.it
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: agid.gov.it
+  role: other
+  relation: own
+- host: api.gov.it
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.gov.it
+  role: api
+  relation: other-domain
+- host: dashboard.agid.gov.it
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: agid.gov.it
+  role: other
+  relation: own
+- host: form.agid.gov.it
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: agid.gov.it
+  role: other
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  - apis[]
+  types:
+  - GitHubOrganization
+  - SpectralRules
+  serves:
+  - docs
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: italia.github.io
+  found_by:
+  - pointer
+  types:
+  - Tools
+  serves: []
+  registrable_domain: github.io
+  role: other
+  relation: platform
+- host: monitoraggio.accessibilita.agid.gov.it
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: agid.gov.it
+  role: other
+  relation: own
+- host: peppol.agid.gov.it
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: agid.gov.it
+  role: other
+  relation: own
+- host: trasparenza.agid.gov.it
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: agid.gov.it
+  role: other
+  relation: own
+- host: www.agid.gov.it
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Security
+  - Newsroom
+  - Website
+  - Guidelines
+  - Blog
+  - PrivacyPolicy
+  - TermsOfService
+  serves:
+  - cdn
+  vendor: cloudfront
+  registrable_domain: agid.gov.it
+  role: website
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform
+- host: www.youtube.com
+  found_by:
+  - pointer
+  types:
+  - YouTube
+  serves: []
+  registrable_domain: youtube.com
+  role: other
+  relation: platform
+- host: x.com
+  found_by:
+  - pointer
+  types:
+  - Twitter
+  serves: []
+  registrable_domain: x.com
+  role: other
+  relation: platform
