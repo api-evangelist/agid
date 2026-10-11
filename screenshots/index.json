@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "agid",
+    "captured_at": "2026-10-11T135820",
+    "source_url": "https://www.agid.gov.it",
+    "source_type": "fallback-domain",
+    "file": "agid-2026-10-11T135820.png",
+    "bytes": 565321,
+    "capture": "playwright-local"
+  }
+]
