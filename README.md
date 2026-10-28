@@ -64,5 +64,108 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-AgID (Agenzia per l'Italia Digitale) is a company surfaced via the API Evangelist harvest backlog (source: spectral-ruleset-web) and added to the network as a stub for full-pipeline profiling.
-- https://italia.github.io/api-oas-checker/
+AgID (Agenzia per l'Italia Digitale) is the Italian government agency for digital innovation in the public administration, describing itself as "innovazione al servizio della PA e dei cittadini. Regolamentazione e certificazioni digitali." It publishes national technical guidelines (Linee Guida), oversees accessibility, open data and open-source reuse, and maintains public repositories under the AgID GitHub organization. It surfaced via the API Evangelist harvest backlog through a Spectral ruleset for Italian OpenAPI guidelines (the Italian OpenAPI Checker).
+
+**Areas:** Company · Government · Public Sector · Italy · Digital Transformation · Guidelines · Spectral
+
+## AgID (Agenzia per l'Italia Digitale) on APIs.io
+
+Everything profiled for AgID (Agenzia per l'Italia Digitale) is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/agid/](https://apis.io/providers/agid/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [AgID Protocollo Comunicazione AOO (SOAP interface)](https://apis.io/apis/agid/protocollo-comunicazione-aoo/) — SOAP interface definitions published by AgID for the exchange of protocolled electronic administrative documents between Areas of Homogeneous Organization…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [AgID (Agenzia per l'Italia Digitale) — dati semantic schema editor rules](https://apis.io/rules/agid/agid-dati-semantic-schema-editor-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Agid Authentication](https://apis.io/security/agid/agid-authentication/)
+- [Agid Domain Security](https://apis.io/security/agid/agid-domain-security/)
+- [Agid Vulnerability Disclosure](https://apis.io/security/agid/agid-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Agid Plans Pricing](https://apis.io/plans/agid/agid-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Agid Rate Limits](https://apis.io/rate-limits/agid/agid-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.agid.gov.it/it)
+- [Blog](https://www.agid.gov.it/it/stampa-e-comunicazione)
+- [Security](https://www.agid.gov.it/en/intervention-areas/security)
+- [Terms of service](https://www.agid.gov.it/it/note-legali)
+- [Privacy policy](https://www.agid.gov.it/it/privacy-policy)
+- [GitHub](https://github.com/AgID)
+
+## API Evangelist rating
+
+**Kin Score 27.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 58.9 |
+| Contract quality | 24.0 |
+| Contract governance | 59.1 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 21.1 |
+
+**Agent readiness 16.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/agid/](https://apis.io/providers/agid/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for AgID (Agenzia per l'Italia Digitale): the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/agid/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
