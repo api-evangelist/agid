@@ -90,21 +90,21 @@ Spectral rulesets for the provider's contracts.
 
 Authentication, trust centre, and vulnerability disclosure.
 
-- [Agid Authentication](https://apis.io/security/agid/agid-authentication/)
-- [Agid Domain Security](https://apis.io/security/agid/agid-domain-security/)
-- [Agid Vulnerability Disclosure](https://apis.io/security/agid/agid-vulnerability-disclosure/)
+- [AgID (Agenzia per l'Italia Digitale) Authentication](https://apis.io/security/agid/agid-authentication/)
+- [AgID (Agenzia per l'Italia Digitale) Domain Security](https://apis.io/security/agid/agid-domain-security/)
+- [AgID (Agenzia per l'Italia Digitale) Vulnerability Disclosure](https://apis.io/security/agid/agid-vulnerability-disclosure/)
 
 #### Plans and pricing (1)
 
 Published plans, tiers and prices.
 
-- [Agid Plans Pricing](https://apis.io/plans/agid/agid-plans-pricing/)
+- [AgID (Agenzia per l'Italia Digitale) Plans Pricing](https://apis.io/plans/agid/agid-plans-pricing/)
 
 #### Rate limits (1)
 
 Published request limits.
 
-- [Agid Rate Limits](https://apis.io/rate-limits/agid/agid-rate-limits/)
+- [AgID (Agenzia per l'Italia Digitale) Rate Limits](https://apis.io/rate-limits/agid/agid-rate-limits/)
 
 ## Where to find this API
 
@@ -119,18 +119,18 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 27.4** — thin · rubric 0.24.0 · scored 2026-10-17
+**Kin Score 29.6** — thin · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
-| Discoverability | 58.9 |
+| Discoverability | 69.6 |
 | Contract quality | 24.0 |
 | Contract governance | 59.1 |
-| Operational transparency | 15.8 |
+| Operational transparency | 14.3 |
 | Developer ergonomics | 2.4 |
-| Access clarity | 21.1 |
+| Access clarity | 27.7 |
 
-**Agent readiness 16.2** — agent-aware
+**Agent readiness 15.8** — agent-aware
 
 | Agent-readiness dimension | Result |
 |---|---|
@@ -153,6 +153,12 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Protected Resource Metadata | — |
 | Dynamic Client Registration | — |
 | Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
 **Regulatory alignment 24.5** — Government & Public Sector
 
